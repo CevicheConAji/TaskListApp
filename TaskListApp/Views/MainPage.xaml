@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TaskListApp.ViewModels"
+             x:Class="TaskListApp.Views.MainPage"
+             Title="Lista de tareas">
+
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Lista de tareas"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <Button Text="Añadir tarea"
+                Command="{Binding AddItemCommandNewWindow}" />
+
+        <CollectionView ItemsSource="{Binding Items}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Spacing="10">
+                        <!-- CheckBox para marcar como completado -->
+                        <CheckBox IsChecked="{Binding IsCompleted}" />
+
+                        <!-- Label que cambia el estilo del texto según el estado -->
+                        <Label Text="{Binding Title}">
+                            <Label.Triggers>
+                                <!-- Cambia el texto a tachado si está completado -->
+                                <DataTrigger TargetType="Label"
+                                     Binding="{Binding IsCompleted}"
+                                     Value="true">
+                                    <Setter Property="TextDecorations" Value="Strikethrough" />
+                                </DataTrigger>
+                                <!-- Cambia el texto a normal si no está completado -->
+                                <DataTrigger TargetType="Label"
+                                     Binding="{Binding IsCompleted}"
+                                     Value="false">
+                                    <Setter Property="TextDecorations" Value="None" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+
+                        <!-- Botón para borrar la tarea -->
+                        <Button Text="Borrar"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=DeleteItemCommand}"
+                        CommandParameter="{Binding .}" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>
+

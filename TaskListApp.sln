@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskListApp", "TaskListApp\TaskListApp.csproj", "{E71E3832-3CA5-40E4-8201-C2F9079DB453}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E71E3832-3CA5-40E4-8201-C2F9079DB453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71E3832-3CA5-40E4-8201-C2F9079DB453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71E3832-3CA5-40E4-8201-C2F9079DB453}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E71E3832-3CA5-40E4-8201-C2F9079DB453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71E3832-3CA5-40E4-8201-C2F9079DB453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71E3832-3CA5-40E4-8201-C2F9079DB453}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC2A827A-3839-47A1-B6D4-D9699BF8C193}
+	EndGlobalSection
+EndGlobal

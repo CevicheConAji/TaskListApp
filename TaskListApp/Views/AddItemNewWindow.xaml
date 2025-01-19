@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TaskListApp.ViewModels"
+             x:Class="TaskListApp.Views.AddItemNewWindow"
+             Title="Nueva tarea">
+
+    <ContentPage.BindingContext>
+        <vm:AddItemNewWindowViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Nueva tarea"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <Entry Placeholder="Añade tarea"
+               Text="{Binding NewTaskTitle}" />
+
+        <HorizontalStackLayout>
+            <CheckBox IsChecked="{Binding IsCompleted}" />
+            <Label Text="Completada" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <Button Text="Añadir"
+                Command="{Binding AddItemCommand}" />
+
+        <Button Text="Cancelar"
+                Command="{Binding CancelCommand}" />
+    </VerticalStackLayout>
+</ContentPage>
+
